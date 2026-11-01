@@ -1,0 +1,15 @@
+import re
+from playwright.sync_api import Page, expect
+
+
+def test_example(page: Page) -> None:
+    page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+    page.get_by_role("textbox", name="Username").click()
+    page.get_by_role("textbox", name="Username").press("CapsLock")
+    page.get_by_role("textbox", name="Username").fill("A")
+    page.get_by_role("textbox", name="Username").press("CapsLock")
+    page.get_by_role("textbox", name="Username").fill("Admin")
+    page.get_by_role("textbox", name="Username").press("Tab")
+    page.get_by_role("textbox", name="Password").fill("admin123")
+    page.get_by_role("button", name="Login").click()
+    page.locator("div").filter(has_text=re.compile(r"^Time at Work$")).nth(1).click()

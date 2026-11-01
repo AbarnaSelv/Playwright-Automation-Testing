@@ -1,0 +1,18 @@
+
+# Python virtual environment
+venv/
+venv1/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Test reports and generated results
+reports/
+test-results/
+*.zip
+
+# Environment variables and secrets
+.env
